@@ -72,8 +72,7 @@ const startGame = () => {
   hideElement(welcomeEl);
   viewElement(gameEl);
   hideElement(resultBtn);
-  //shuffledArray(countriesWithShuffledAnswers);
-};
+  hideHeader();};
 //--------------------------------------------------------------------------
 
 //funktion för att dölja "next" knapp och visa "result" knapp efter sista frågan.
@@ -84,9 +83,8 @@ const stopGame = () => {
 };
 
 // funktion för att rendera ut ny header under spelets gång.
-const getHeader = () => {
-  h1El.textContent = "How well do you know your flags? ";
-  h1El.style.marginTop = '2rem';
+const hideHeader = () => {
+  h1El.textContent = "";
 };
 
 //funktion för att visa totala poängen efter varje fråga samt hur många frågor som är besvarade.
@@ -102,16 +100,16 @@ const checkAnswer = (e) => {
   const incorrectBtns = () => {
     [optionEl1, optionEl2, optionEl3, optionEl4]
       .filter((item) => item.textContent !== correctAnswerGlobal)
-      .forEach((item) => item.classList.add("incorrectAnswer"));
+      .forEach((item) => item.classList.add("incorrect-answer"));
   };
   if (target === correctAnswerGlobal) {
     totalScoreCounter++;
-    e.target.classList.add("correctAnswer");
+    e.target.classList.add("correct-answer");
     incorrectBtns();
   } else {
     const correctBtn = [optionEl1, optionEl2, optionEl3, optionEl4]
       .filter((item) => item.textContent === correctAnswerGlobal)
-      .forEach((item) => item.classList.add("correctAnswer"));
+      .forEach((item) => item.classList.add("correct-answer"));
     incorrectBtns();
   } //fortsätt visa "next" knapp så länge det finns fler frågor att besvara
   if (questionCount !== totalQuestions.length) {
@@ -125,7 +123,6 @@ const checkAnswer = (e) => {
   });
 
   totalScore();
-  getHeader();
 };
 
 optionEl1.addEventListener("click", (e) => {
@@ -185,8 +182,8 @@ nextBtn.addEventListener("click", () => {
 //funktion för att rensa rätt/fel klasser från svarsalternativ.
 const clearStatusClass = (...targets) => {
   targets.forEach((target) => {
-    target.classList.remove("incorrectAnswer");
-    target.classList.remove("correctAnswer");
+    target.classList.remove("incorrect-answer");
+    target.classList.remove("correct-answer");
   });
 };
 
@@ -234,6 +231,5 @@ playAgainBtn.addEventListener("click", () => {
   viewElement(welcomeEl);
   clearStatusClass(optionEl1, optionEl2, optionEl3, optionEl4);
   resetGame();
-  getHeader();
 });
 //--------------------------------------------------------------------------
