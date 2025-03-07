@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flags of the World Quiz</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="container">
+    <!-- Sida 1 - välkomstsida -->
+    <header>
+      <h1 class="page-title">Flags of the World Quiz</h1>
+    </header>
+    <main>
+      <section id="white-moon-el"></section>
+      <section class="welcome-el">
+        <h2>Select how many flags to Start:</h2>
+        <button class="btn-10">10</button>
+        <button class="btn-20">20</button>
+        <button class="btn-30">30</button><button class="btn-all">ALL</button>
+      </section>
+      <!-- Sida 1 - välkomstsida -->
+      <!-- Sida 1 - spelsida -->
+      <section id="game-el" class="hide">
+        <div class="container-fluid">
+          <figure>
+            <img
+              class="img-fluid"
+              id="country-image"
+              src="./images/mr-bean-celebration.gif"
+              alt="Country flag Image"
+            />
+          </figure>
+        </div>
+        <p class="sub-title">What's the Name of This Country?</p>
+        <section>
+          <div class="option-el-btns">
+            <button class="option1"></button>
+            <button class="option2"></button>
+            <button class="option3"></button>
+            <button class="option4"></button>
+          </div>
+          <br />
+          <p id="total-score" class="total-score"></p>
+          <button id="next-btn" class="hide">Next</button>
+          <button id="result-btn" class="hide">Show Results</button>
+        </section>
+      </section>
+      <!-- Sida 2 - spelsida -->
+      <!-- Sida 3 - resultatsida -->
+      <section id="result-el" class="hide">
+        <h2>Quiz Results:</h2>
+        <p id="round-score-el"></p>
+        <figure>
+          <img
+            class="img-fluid"
+            id="result-image"
+            src="./images/mr-bean-ok.gif"
+            alt="Result Gif"
+          />
+        </figure>
+        <p id="result-text"></p>
+        <button id="play-again-btn">Play Again!</button>
+      </section>
+    </main>
+    <!-- Sida 3 - resultatsida -->
+    <footer class="container">
+      <p>&copy; 2023 Ellinor Lindström Flags Quiz</p>
+    </footer>
+    <script type="module" src="countries.js"></script>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
