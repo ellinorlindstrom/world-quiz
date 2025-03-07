@@ -1,1 +1,3 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/AYWC8jot)
+# Flags of the World Quiz
+
+This is a simple web-based quiz game where users can test their knowledge of the flags of the world. The game presents a flag and multiple-choice options for the user to select the correct country name.
